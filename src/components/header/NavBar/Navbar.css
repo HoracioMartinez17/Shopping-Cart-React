@@ -1,0 +1,27 @@
+
+.navbar-header-menu{
+/* display: flex;
+justify-content: space-between;
+align-items: center; */
+background-color: rgb(19, 21, 8);
+}
+.nav-ul-menu {
+display: flex;
+padding: 1.5rem;
+gap: 1rem;
+font-size: 1.3rem;
+color: #fff;
+text-decoration: none;
+list-style: none;
+cursor: pointer;
+}
+.nav-ul-menu li {
+    transition: 0.2s all;
+    border-top: 2px solid transparent; /* Agregar borde inferior transparente */
+    border-bottom: 2px solid transparent; /* Agregar borde inferior transparente */
+  }
+  
+  .nav-ul-menu li:hover {
+    border-top-color: #e65f89; /* Cambiar el color del borde inferior en el hover */
+    border-bottom-color: #350404; /* Cambiar el color del borde inferior en el hover */
+  }
