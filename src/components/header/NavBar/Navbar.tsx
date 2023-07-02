@@ -8,7 +8,6 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
@@ -168,13 +167,13 @@ export const Navbar = () => {
 						LOGO
 					</Typography>
 
-					<Box component="ul" sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, listStyle: 'none', mr: 1 }}>
+					<Box component="ul" sx={{ flexGrow: 1, display: { xs: "none", md: "flex" },listStyle: 'none', mr: 1 }}>
 						{pages.map((page) => (
 							<StyledListItem
 								key={page.label}
 								onClick={handleCloseNavMenu}
 								sx={{ my: 2 }}>
-								<Typography variant="body1" component={Link} to={page.path.toLowerCase()} sx={{ textDecoration: "none", color: "white", px: 2 }}>
+								<Typography variant="body1" component={Link} to={page.path.toLowerCase()} sx={{ textDecoration: "none", color: "white", px:2 }}>
 									{page.label}
 								</Typography>
 							</StyledListItem>

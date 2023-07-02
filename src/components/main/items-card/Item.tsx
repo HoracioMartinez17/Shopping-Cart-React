@@ -1,3 +1,4 @@
+import React from 'react';
 import IconButton from "@mui/material/IconButton";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Card from "@mui/material/Card";
@@ -6,49 +7,36 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { useState } from "react";
-import { ProductProps } from "../../../types/types";
-import { ItemsDetailsContainer } from "./ItemsDetailsContainer";
+import { Link } from "react-router-dom";
 
+interface ItemProps {
+  id: string;
+  title: string;
+  price: number;
+  srcImg: string;
+}
 
-export const Item = ({ product }: { product: ProductProps }) => {
-	const [showItemDetails, setShowItemDetails] = useState(false);
-
-	const handleClick = () => {
-		setShowItemDetails(true);
-	};
-	return (
-		<Card sx={{ maxWidth: 345 }}>
-			<CardMedia
-				component="img"
-				alt="green iguana"
-				height="140"
-				image={product.srcImg}
-			/>
-			<CardContent>
-				<Typography gutterBottom variant="h5" component="div">
-					{product.title}
-				</Typography>
-				{/* <Typography variant="body2" color="text.secondary">
-          {product.description}
-        </Typography> */}
-			</CardContent>
-			<CardActions>
-				<Button size="medium">
-					{product.price.toLocaleString("en-US", {
-						style: "currency",
-						currency: "USD",
-					})}
-				</Button>
-				<IconButton
-					onClick={handleClick}
-					color="success"
-					aria-label="add to shopping cart">
-					<AddShoppingCartIcon />
-				</IconButton>
-			</CardActions>
-			{showItemDetails && <ItemsDetailsContainer itemId={product.id} />}{" "}
-			{/* Renderiza los detalles del item si showItemDetails es true */}
-		</Card>
-	);
+export const Item: React.FC<ItemProps> = ({ id, title, price, srcImg }) => {
+  return (
+    <Card sx={{ maxWidth: 345 }}>
+      <CardMedia component="img" alt="green iguana" height="140" image={srcImg} />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {title}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="medium">
+          {price.toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+          })}
+        </Button>
+        <IconButton color="success" aria-label="add to shopping cart">
+          <AddShoppingCartIcon />
+        </IconButton>
+        <Link to={`/item/${id}`}>Ver más</Link>
+      </CardActions>
+    </Card>
+  );
 };

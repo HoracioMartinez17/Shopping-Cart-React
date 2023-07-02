@@ -1,48 +1,30 @@
+import { ProductDetailsProps, ProductProps } from "../../../types/types";
+import { ItemDetails } from "./ItemDetails";
 import { getForItemId } from "../../../funtionsUtils/funtionsUtilis";
-import { ProductProps, ProductDetailsProps } from "../../../types/types";
-import IconButton from "@mui/material/IconButton";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+import { useEffect, useState } from "react";
 
-export const ItemsDetailsContainer = ({ itemId }: ProductDetailsProps) => {
-	const product: ProductProps | { error: string } = getForItemId(itemId);
+export const ItemsDetailsContainer = ({ id }: ProductDetailsProps) => {
+  const [item, setItem] = useState<ProductProps | { error: string } | null>(null);
 
-	if ("error" in product) {
-		return <p>Producto no encontrado</p>;
-	}
+  const fetchItem = async () => {
+    try {
+      const result = await getForItemId(id);
+      setItem(result);
+    } catch (error) {
+      setItem({ error: error as string });
+    }
+  };
+  useEffect(() => {
+fetchItem();
+  }, [id]);
 
-	return (
-		<Card sx={{ maxWidth: 345 }}>
-			<CardMedia
-				component="img"
-				alt="green iguana"
-				height="140"
-				image={product.srcImg}
-			/>
-			<CardContent>
-				<Typography gutterBottom variant="h5" component="div">
-					{product.title}
-				</Typography>
-				<Typography variant="body2" color="text.secondary">
-					{product.description}
-				</Typography>
-			</CardContent>
-			<CardActions>
-				<Button size="medium">
-					{product.price.toLocaleString("en-US", {
-						style: "currency",
-						currency: "USD",
-					})}
-				</Button>
-				<IconButton color="success" aria-label="add to shopping cart">
-					<AddShoppingCartIcon />
-				</IconButton>
-			</CardActions>
-		</Card>
-	);
-};
+  if (!item) {
+    return <div>Loading...</div>;
+  }
+
+  if ("error" in item) {
+    return <div>{item.error}</div>;
+  }
+
+  return <ItemDetails itemId={item.id} />;
+}

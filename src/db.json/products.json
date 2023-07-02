@@ -1,0 +1,96 @@
+{
+	"nike": [
+	  {
+		"id": "nike1",
+		"title": "Nike Air Max 90",
+		"description": "Classic Nike Air Max 90 sneakers for ultimate comfort and style.",
+		"stock": 10,
+		"price": 120,
+		"srcImg": "https://i.postimg.cc/MTcjyXQF/nike-dunk-low-01.webp",
+		"quantity": 1
+	  },
+	  {
+		"id": "nike2",
+		"title": "Nike Free Run",
+		"description": "Nike Free Run shoes for a lightweight and flexible running experience.",
+		"stock": 8,
+		"price": 90,
+		"srcImg": "https://i.postimg.cc/hjHQMg8P/nike-dunk-low-02.webp",
+		"quantity": 1
+	  },
+	  {
+		"id": "nike3",
+		"title": "Nike Air Force 1",
+		"description": "Iconic Nike Air Force 1 sneakers known for their timeless style.",
+		"stock": 12,
+		"price": 110,
+		"srcImg": "https://i.postimg.cc/XvswfTDp/nike-air-force-03.webp",
+		"quantity": 1
+	  },
+	  {
+		"id": "nike4",
+		"title": "Nike Zoom Pegasus",
+		"description": "Nike Zoom Pegasus running shoes designed for speed and agility.",
+		"stock": 15,
+		"price": 100,
+		"srcImg": "https://i.postimg.cc/59YwzK52/nike-air-force-04.webp",
+		"quantity": 1
+	  },
+	  {
+		"id": "nike5",
+		"title": "Nike SB Dunk Low",
+		"description": "Stylish Nike SB Dunk Low sneakers for skateboarding enthusiasts.",
+		"stock": 10,
+		"price": 95,
+		"srcImg": "https://i.postimg.cc/8zDWq127/nike-air-max-05.webp",
+		"quantity": 1
+	  }
+	],
+	"adidas": [
+	  {
+		"id": "adidas1",
+		"title": "Adidas Superstar",
+		"description": "Classic Adidas Superstar sneakers that never go out of style.",
+		"stock": 12,
+		"price": 80,
+		"srcImg": "https://i.postimg.cc/Gpdj0Q1k/adidas-samba-01.webp",
+		"quantity": 1
+	  },
+	  {
+		"id": "adidas2",
+		"title": "Adidas Ultraboost",
+		"description": "Adidas Ultraboost shoes known for their exceptional comfort and energy return.",
+		"stock": 10,
+		"price": 180,
+		"srcImg": "https://i.postimg.cc/GpKxbyc6/adidas-samba-02.webp",
+		"quantity": 1
+	  },
+	  {
+		"id": "adidas3",
+		"title": "Adidas NMD",
+		"description": "Adidas NMD sneakers combining style and performance for urban exploration.",
+		"stock": 8,
+		"price": 150,
+		"srcImg": "https://i.postimg.cc/xCdy8188/adidas-samba-03.webp",
+		"quantity": 1
+	  },
+	  {
+		"id": "adidas4",
+		"title": "Adidas Stan Smith",
+		"description": "Timeless Adidas Stan Smith sneakers for a clean and minimalist look.",
+		"stock": 15,
+		"price": 90,
+		"srcImg": "https://i.postimg.cc/HnqQ6028/adidas-samba-04.webp",
+		"quantity": 1
+	  },
+	  {
+		"id": "adidas5",
+		"title": "Adidas Gazelle",
+		"description": "Adidas Gazelle sneakers for a retro-inspired style with modern comfort.",
+		"stock": 10,
+		"price": 85,
+		"srcImg": "https://i.postimg.cc/Qx7gHP8Q/adidas-samba-05.webp",
+		"quantity": 1
+	  }
+	]
+}
