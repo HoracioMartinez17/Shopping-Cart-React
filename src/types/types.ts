@@ -8,10 +8,16 @@ export interface ProductProps {
 	quantity: number;
   }
   
-  export interface ProductData {
-	[brand: string]: ProductProps[];
+  export interface Brand {
+	brand: string;
+	products: ProductProps[];
   }
-
+  
+  export interface ProductData {
+	products: Brand[];
+  }
+  
+  
   export interface ProductDetailsProps {
 	id: string;
   }

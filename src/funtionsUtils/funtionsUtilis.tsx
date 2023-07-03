@@ -1,24 +1,43 @@
 import products from "../../src/db.json/products.json";
-import { ProductProps, ProductData } from "../types/types";
+import { ProductProps, ProductData, Brand} from "../types/types";
 
 export const getForItemId = async (id: string): Promise<ProductProps | { error: string }> => {
-  const allProducts =  Object.values(products); // Fetch the products data
-  const itemList = Object.values(allProducts).flat();
+  const productData: ProductData = products;
 
-  const index = itemList.findIndex((product) => product.id === id);
+  for (const brand of productData.products) {
+    const foundProduct = brand.products.find(product => product.id === id);
+    if (foundProduct) {
+      return foundProduct;
+    }
+  }
 
-  if (index !== -1) {
-    return itemList[index];
-  } else {
-    throw { error: "No existe el producto" };
+  throw { error: 'No existe el producto' };
+};
+
+export const getForBrand = async (brand: string): Promise<ProductProps[]> => {
+  try {
+    const productData: Brand[] = await fetchProducts();
+    const filteredProducts: ProductProps[] = [];
+
+    for (const brandData of productData) {
+      if (brandData.brand === brand) {
+        filteredProducts.push(...brandData.products);
+      }
+    }
+
+    return filteredProducts;
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    throw error; // rethrow the error or handle it accordingly
   }
 };
 
 
 
 // api.js
-export const fetchProducts = async (): Promise<ProductData> => {
-  const response = await fetch("src/db.json/products.json");
-  const data: ProductData = await response.json();
+export const fetchProducts = async (): Promise<Brand[]> => {
+  const response = await fetch("http://localhost:3000/products");
+  const data: Brand[] = await response.json();
   return data;
 };
+

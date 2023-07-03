@@ -7,5 +7,5 @@ export * from './components/main/items-card';
 export * from './components/main/products/ProductsList';
 export * from './funtionsUtils/funtionsUtilis';
 export * from './index';
-export * from './types/types.d';
+export * from './types/typeees';
 
