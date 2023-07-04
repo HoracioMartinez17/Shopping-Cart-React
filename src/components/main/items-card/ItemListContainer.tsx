@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Brand, ProductProps } from '../../../types/types';
-import { fetchProducts, getForBrand } from '../../../funtionsUtils/funtionsUtilis';
+import { capitalizeTitle, fetchProducts, getProductsByBrand  } from '../../../funtionsUtils/funtionsUtilis';
 import { ItemList } from './Itemlist';
 
 interface ItemListContainerProps {}
 
-export const ItemListContainer: React.FC<ItemListContainerProps> = React.memo(() => {
+export const ItemListContainer: React.FC<ItemListContainerProps> = () => {
   const [products, setProducts] = useState<ProductProps[]>([]);
+  const [title, setTitle] = useState("Products")
   const [error, setError] = useState<string | null>(null);
   const { brand } = useParams<{ brand: string }>();
 
@@ -16,10 +17,13 @@ export const ItemListContainer: React.FC<ItemListContainerProps> = React.memo(()
       const data: Brand[] = await fetchProducts();
 
       if (brand) {
-        const brandProducts = await getForBrand(brand);
+        const brandProducts = await getProductsByBrand(brand);
         setProducts(brandProducts);
+        const capitalizedTitle = capitalizeTitle(brand);
+        setTitle(capitalizedTitle);
       } else {
         setProducts(data.flatMap(item => item.products));
+        setTitle("");
       }
     } catch (error) {
       setError("Error fetching products");
@@ -30,19 +34,13 @@ export const ItemListContainer: React.FC<ItemListContainerProps> = React.memo(()
   useEffect(() => {
     fetchProductsData();
     console.log("ItemListContainer montado");
-  }, []); // No se especifica ninguna dependencia, lo que significa que solo se ejecutará una vez al montar el componente
-
-  useEffect(() => {
-    if (brand) {
-      fetchProductsData();
-      console.log("ItemListContainer montado brand");
-    }
   }, [brand]); // Se ejecutará solo cuando cambie el valor de 'brand'
+
 
   if (error) {
     return <div>Error: {error}</div>;
   }
 
-  return <ItemList products={products} />;
-});
+  return <ItemList products={products} title= {title}/>;
+};
 

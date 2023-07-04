@@ -28,7 +28,7 @@ const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
 		padding: "0 4px",
 	},
 }));
-const StyledListItem = styled("li")(({ theme }) => ({
+const StyledListItem = styled("li")(() => ({
 	color: "white",
 	margin: "8px 0",
 }));

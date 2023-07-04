@@ -1,4 +1,5 @@
 export * from './Item';
+export * from './ItemCount';
 export * from './ItemDetails';
 export * from './ItemListContainer';
 export * from './Itemlist';

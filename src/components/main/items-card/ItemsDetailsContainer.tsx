@@ -1,30 +1,33 @@
-import { ProductDetailsProps, ProductProps } from "../../../types/types";
-import { ItemDetails } from "./ItemDetails";
-import { getForItemId } from "../../../funtionsUtils/funtionsUtilis";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
+import { ProductDetailsProps,Brand } from '../../../types/types';
+import { ItemDetails } from './ItemDetails';
+import { getProductById } from '../../../funtionsUtils/funtionsUtilis';
 
 export const ItemsDetailsContainer = ({ id }: ProductDetailsProps) => {
-  const [item, setItem] = useState<ProductProps | { error: string } | null>(null);
+  const [item, setItem] = useState<{ products: Brand[] } | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
-  const fetchItem = async () => {
-    try {
-      const result = await getForItemId(id);
-      setItem(result);
-    } catch (error) {
-      setItem({ error: error as string });
-    }
-  };
   useEffect(() => {
-fetchItem();
+    const fetchItem = async () => {
+      try {
+        const result: Brand[] = await getProductById(id);
+        setItem({ products: result });
+      } catch (error) {
+        console.error('Error fetching product:', error);
+        setError('Error fetching product');
+      }
+    };
+
+    fetchItem();
   }, [id]);
 
-  if (!item) {
+  if (item === null && error === null) {
     return <div>Loading...</div>;
   }
 
-  if ("error" in item) {
-    return <div>{item.error}</div>;
+  if (error !== null) {
+    return <div>Error: {error}</div>;
   }
 
-  return <ItemDetails itemId={item.id} />;
-}
+  return <ItemDetails item={item!} />;
+};

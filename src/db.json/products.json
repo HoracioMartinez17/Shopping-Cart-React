@@ -5,38 +5,62 @@
 		"products": [
 		  {
 			"id": "nike1",
-			"title": "Nike Air Max 90",
+			"title": "Nike Air  ",
 			"description": "Classic Nike Air Max 90 sneakers for ultimate comfort and style.",
 			"stock": 10,
 			"price": 120,
-			"srcImg": "https://i.postimg.cc/MTcjyXQF/nike-dunk-low-01.webp",
+			"srcImg": [
+			  "https://i.postimg.cc/MHQV8XZQ/nike-air-max-01.webp",
+			  "https://i.postimg.cc/nhk7xyx0/nike-air-max-02.webp",
+			  "https://i.postimg.cc/1RkDr0Mc/nike-air-max-03.webp",
+			  "https://i.postimg.cc/BQ2HY8VW/nike-air-max-04.webp",
+			  "https://i.postimg.cc/8zDWq127/nike-air-max-05.webp"
+			],
 			"quantity": 1
 		  },
 		  {
 			"id": "nike2",
-			"title": "Nike Free RN",
-			"description": "Lightweight Nike Free RN running shoes for a natural feel.",
+			"title": "Nike Air Max",
+			"description": "Lightweight Nike Air Max sneakers for a natural feel.",
 			"stock": 8,
 			"price": 90,
-			"srcImg": "https://i.postimg.cc/nc4CjHFT/nike-free-rn-01.webp",
+			"srcImg": [
+			  "https://i.postimg.cc/52Mqb5CN/nike-air-force-01.webp",
+			  "https://i.postimg.cc/N0s6rgD3/nike-air-force-02.webp",
+			  "https://i.postimg.cc/XvswfTDp/nike-air-force-03.webp",
+			  "https://i.postimg.cc/59YwzK52/nike-air-force-04.webp",
+			  "https://i.postimg.cc/1tTwTDSS/nike-air-force-05.webp"
+			],
 			"quantity": 1
 		  },
 		  {
 			"id": "nike3",
-			"title": "Nike Air Force 1",
+			"title": "Nike Air Force ",
 			"description": "Iconic Nike Air Force 1 sneakers with timeless design.",
 			"stock": 5,
 			"price": 100,
-			"srcImg": "https://i.postimg.cc/Prz45YmK/nike-air-force-1-01.webp",
+			"srcImg": [
+				"https://i.postimg.cc/52Mqb5CN/nike-air-force-01.webp",
+				"https://i.postimg.cc/N0s6rgD3/nike-air-force-02.webp",
+				"https://i.postimg.cc/XvswfTDp/nike-air-force-03.webp",
+				"https://i.postimg.cc/59YwzK52/nike-air-force-04.webp",
+				"https://i.postimg.cc/1tTwTDSS/nike-air-force-05.webp"
+			],
 			"quantity": 1
 		  },
 		  {
 			"id": "nike4",
-			"title": "Nike React Infinity Run",
-			"description": "Nike React Infinity Run shoes for enhanced cushioning and stability.",
+			"title": "Nike Dunk Low",
+			"description": "Nike Dunk Low sneakers for enhanced cushioning and stability.",
 			"stock": 15,
 			"price": 140,
-			"srcImg": "https://i.postimg.cc/q7sBbN1R/nike-react-infinity-run-01.webp",
+			"srcImg": [
+			  "https://i.postimg.cc/MTcjyXQF/nike-dunk-low-01.webp",
+			  "https://i.postimg.cc/hjHQMg8P/nike-dunk-low-02.webp",
+			  "https://i.postimg.cc/wMLyGPF5/nike-dunk-low-03.webp",
+			  "https://i.postimg.cc/ZYddnBZ9/nike-dunk-low-04.webp",
+			  "https://i.postimg.cc/J4CBkr4p/nike-dunk-low-05.webp"
+			],
 			"quantity": 1
 		  },
 		  {
@@ -45,7 +69,13 @@
 			"description": "Nike Zoom Pegasus 38 running shoes for responsive performance.",
 			"stock": 7,
 			"price": 110,
-			"srcImg": "https://i.postimg.cc/tgnp9NRv/nike-zoom-pegasus-38-01.webp",
+			"srcImg": [
+			  "https://i.postimg.cc/5N5Q5hXb/on-running-cloudswift-01.webp",
+			  "https://i.postimg.cc/W1XDC0my/on-running-cloudswift-02.webp",
+			  "https://i.postimg.cc/tgcsCyMt/on-running-cloudswift-03.webp",
+			  "https://i.postimg.cc/C1fzRXyy/on-running-cloudswift-04.webp",
+			  "https://i.postimg.cc/N0FycLpj/on-running-cloudswift-05.webp"
+			],
 			"quantity": 1
 		  }
 		]
@@ -59,7 +89,13 @@
 			"description": "Classic Adidas Superstar sneakers that never go out of style.",
 			"stock": 12,
 			"price": 80,
-			"srcImg": "https://i.postimg.cc/Gpdj0Q1k/adidas-samba-01.webp",
+			"srcImg": [
+			  "https://i.postimg.cc/Gpdj0Q1k/adidas-samba-01.webp",
+			  "https://i.postimg.cc/GpKxbyc6/adidas-samba-02.webp",
+			  "https://i.postimg.cc/xCdy8188/adidas-samba-03.webp",
+			  "https://i.postimg.cc/HnqQ6028/adidas-samba-04.webp",
+			  "https://i.postimg.cc/Qx7gHP8Q/adidas-samba-05.webp"
+			],
 			"quantity": 1
 		  },
 		  {
@@ -68,7 +104,13 @@
 			"description": "Timeless Adidas Stan Smith sneakers with clean and minimal design.",
 			"stock": 9,
 			"price": 75,
-			"srcImg": "https://i.postimg.cc/CLdMXjXd/adidas-stan-smith-01.webp",
+			"srcImg": [
+			  "https://i.postimg.cc/3rc9ymgT/adidas-originals-zx-01.webp",
+			  "https://i.postimg.cc/XqGfK1w0/adidas-originals-zx-02.webp",
+			  "https://i.postimg.cc/bJF0tfST/adidas-originals-zx-03.webp",
+			  "https://i.postimg.cc/Dy4610gb/adidas-originals-zx-04.webp",
+			  "https://i.postimg.cc/JzbQdFSr/adidas-originals-zx-05.webp"
+			],
 			"quantity": 1
 		  },
 		  {
@@ -77,7 +119,13 @@
 			"description": "Adidas Ultraboost shoes for maximum energy return and comfort.",
 			"stock": 6,
 			"price": 180,
-			"srcImg": "https://i.postimg.cc/PqfW6gcx/adidas-ultraboost-01.webp",
+			"srcImg": [
+			  "https://i.postimg.cc/pLtf8Zrg/jordan-point-01.webp",
+			  "https://i.postimg.cc/8zBhb6rs/jordan-point-02.webp",
+			  "https://i.postimg.cc/QM8cYdpm/jordan-point-03.webp",
+			  "https://i.postimg.cc/YSdY5BRH/jordan-point-04.webp",
+			  "https://i.postimg.cc/bJdk8VV2/jordan-point-05.webp"
+			],
 			"quantity": 1
 		  },
 		  {
@@ -86,7 +134,13 @@
 			"description": "Adidas NMD R1 sneakers with modern style and responsive cushioning.",
 			"stock": 11,
 			"price": 130,
-			"srcImg": "https://i.postimg.cc/8cW8NQdM/adidas-nmd-r1-01.webp",
+			"srcImg": [
+			  "https://i.postimg.cc/hjwxG8NZ/lacoste-game-advance-01.webp",
+			  "https://i.postimg.cc/44m15xGZ/lacoste-game-advance-02.webp",
+			  "https://i.postimg.cc/MXJQ766y/lacoste-game-advance-03.webp",
+			  "https://i.postimg.cc/SQ3ftbQ9/lacoste-game-advance-04.webp",
+			  "https://i.postimg.cc/zXhSs23c/lacoste-game-advance-05.webp"
+			],
 			"quantity": 1
 		  },
 		  {
@@ -95,7 +149,13 @@
 			"description": "Classic Adidas Gazelle sneakers with retro charm and versatility.",
 			"stock": 4,
 			"price": 90,
-			"srcImg": "https://i.postimg.cc/fYjMkQGr/adidas-gazelle-01.webp",
+			"srcImg": [
+			  "https://i.postimg.cc/MKwvG9d4/vans-rowley-01.webp",
+			  "https://i.postimg.cc/QCQCb7x0/vans-rowley-02.webp",
+			  "https://i.postimg.cc/G3G4rWJG/vans-rowley-03.webp",
+			  "https://i.postimg.cc/YqxjLQPS/vans-rowley-04.webp",
+			  "https://i.postimg.cc/htyjpccW/vans-rowley-05.webp"
+			],
 			"quantity": 1
 		  }
 		]

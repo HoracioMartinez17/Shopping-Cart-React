@@ -13,7 +13,7 @@ interface ItemProps {
   id: string;
   title: string;
   price: number;
-  srcImg: string;
+  srcImg: string[];
 }
 
 export const Item: React.FC<ItemProps> = ({ id, title, price, srcImg }) => {

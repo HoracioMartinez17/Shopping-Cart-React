@@ -4,7 +4,7 @@ export interface ProductProps {
 	description: string;
 	stock: number;
 	price: number;
-	srcImg: string;
+	srcImg: string[];
 	quantity: number;
   }
   
