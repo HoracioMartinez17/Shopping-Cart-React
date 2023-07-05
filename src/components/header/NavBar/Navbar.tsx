@@ -135,11 +135,13 @@ const pages = [
 				  </MenuItem>
 				))}
 				<MenuItem>
+						<Link to = "/cart">
 				  <IconButton aria-label="cart">
 					<StyledBadge badgeContent={4} color="secondary">
 					  <ShoppingCartIcon />
 					</StyledBadge>
 				  </IconButton>
+					  </Link>
 				</MenuItem>
 			  </Menu>
 			</Box>
@@ -190,11 +192,13 @@ const pages = [
   ))}
 </Box>
 			<Box sx={{ flexGrow: 0 }}>
+			<Link to = "/cart">
 			  <IconButton aria-label="cart" sx={{ color }}>
 				<StyledBadge badgeContent={4} color="secondary">
 				  <ShoppingCartIcon />
 				</StyledBadge>
 			  </IconButton>
+			  </Link>
 			  <Tooltip title="Open settings">
 				<IconButton onClick={handleOpenUserMenu} sx={{ px: 3 }}>
 				  <Avatar

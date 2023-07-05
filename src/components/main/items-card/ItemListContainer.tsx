@@ -8,7 +8,7 @@ interface ItemListContainerProps {}
 
 export const ItemListContainer: React.FC<ItemListContainerProps> = () => {
   const [products, setProducts] = useState<ProductProps[]>([]);
-  const [title, setTitle] = useState("Products")
+  const [title, setTitle] = useState("")
   const [error, setError] = useState<string | null>(null);
   const { brand } = useParams<{ brand: string }>();
 

@@ -1,14 +1,15 @@
-import products from "../../src/db.json/products.json";
-import { ProductProps, ProductData, Brand} from "../types/types";
+import { ProductProps,  Brand} from "../types/types";
 
 
 export const getProductById = async (id: string): Promise<Brand[]> => {
   try {
-    const productData: ProductData = products;
+    // Obtener los datos de productos mediante una llamada a la función fetchProducts
+    const productData: Brand[] = await fetchProducts();
+
     const foundProducts: Brand[] = [];
 
     // Recorrer cada marca de productos
-    for (const brand of productData.products) {
+    for (const brand of productData) {
       // Buscar el producto correspondiente al ID dado
       const foundProduct = brand.products.find((product: ProductProps) => product.id === id);
       if (foundProduct) {
@@ -23,9 +24,10 @@ export const getProductById = async (id: string): Promise<Brand[]> => {
     return foundProducts;
   } catch (error) {
     console.error("Error retrieving product:", error);
-    throw new Error("Error retrieving product");
+    throw error; // Relanzar el error o manejarlo según sea necesario
   }
 };
+
 
 
 export const getProductsByBrand = async (brand: string): Promise<ProductProps[]> => {

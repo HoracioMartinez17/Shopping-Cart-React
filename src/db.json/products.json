@@ -5,7 +5,7 @@
 		"products": [
 		  {
 			"id": "nike1",
-			"title": "Nike Air  ",
+			"title": "Nike Air",
 			"description": "Classic Nike Air Max 90 sneakers for ultimate comfort and style.",
 			"stock": 10,
 			"price": 120,
@@ -35,16 +35,16 @@
 		  },
 		  {
 			"id": "nike3",
-			"title": "Nike Air Force ",
+			"title": "Nike Air Force",
 			"description": "Iconic Nike Air Force 1 sneakers with timeless design.",
 			"stock": 5,
 			"price": 100,
 			"srcImg": [
-				"https://i.postimg.cc/52Mqb5CN/nike-air-force-01.webp",
-				"https://i.postimg.cc/N0s6rgD3/nike-air-force-02.webp",
-				"https://i.postimg.cc/XvswfTDp/nike-air-force-03.webp",
-				"https://i.postimg.cc/59YwzK52/nike-air-force-04.webp",
-				"https://i.postimg.cc/1tTwTDSS/nike-air-force-05.webp"
+			  "https://i.postimg.cc/52Mqb5CN/nike-air-force-01.webp",
+			  "https://i.postimg.cc/N0s6rgD3/nike-air-force-02.webp",
+			  "https://i.postimg.cc/XvswfTDp/nike-air-force-03.webp",
+			  "https://i.postimg.cc/59YwzK52/nike-air-force-04.webp",
+			  "https://i.postimg.cc/1tTwTDSS/nike-air-force-05.webp"
 			],
 			"quantity": 1
 		  },

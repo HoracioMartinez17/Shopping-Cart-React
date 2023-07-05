@@ -19,7 +19,7 @@ interface ItemProps {
 export const Item: React.FC<ItemProps> = ({ id, title, price, srcImg }) => {
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardMedia component="img" alt="green iguana" height="140" image={srcImg} />
+      <CardMedia component="img" alt= {title} height= "140" image= {srcImg} />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {title}

@@ -1,18 +1,19 @@
 import React, { ChangeEvent } from 'react';
 
 interface ItemCountProps {
-  cantidad: number;
+  quantity: number;
   handleSum: () => void;
   handleRest: () => void;
+  handleAddCart: () => void;
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const ItemCount: React.FC<ItemCountProps> = ({ cantidad, handleSum, handleRest, handleChange }) => {
+export const ItemCount: React.FC<ItemCountProps> = ({ quantity, handleSum, handleRest, handleChange, handleAddCart }) => {
   return (
     <>
       <div className="producto__contenedor-propiedad">
-        <p className="producto__propiedad">Cantidad</p>
-        <button type="button" className="producto__btn-cantidad" id="disminuir-cantidad" onClick={handleRest}>
+        <p className="producto__propiedad">cantidad</p>
+        <button type="button" className="producto__btn-cantidad"  onClick={handleRest}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -25,14 +26,13 @@ export const ItemCount: React.FC<ItemCountProps> = ({ cantidad, handleSum, handl
         </button>
         <input
           type="number"
-          value={cantidad}
+          value={quantity}
           className="producto__cantidad"
           onChange={handleChange}
         />
         <button
           type="button"
           className="producto__btn-cantidad"
-          id="incrementar-cantidad"
           onClick={handleSum}
         >
           <svg
@@ -48,7 +48,9 @@ export const ItemCount: React.FC<ItemCountProps> = ({ cantidad, handleSum, handl
           </svg>
         </button>
       </div>
-      <button type="submit" className="producto__btn-carrito" id="agregar-al-carrito">
+      <button type="button"
+       className="producto__btn-carrito"
+       onClick={handleAddCart}>
         Agregar al carrito
       </button>
     </>
