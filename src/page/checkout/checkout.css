@@ -1,0 +1,18 @@
+.adress-container {
+	width: 100vw; /* Ocupar el 100% del ancho de la ventana */
+	height: 100vh; /* Ocupar el 100% de la altura de la ventana */
+	justify-content: center;
+	padding: 1.5rem 1rem;
+	/* align-items: center; */
+	background: radial-gradient(circle at 10% 20%, rgb(255, 37, 174) 0%, rgb(241, 147, 55) 53.4%, rgb(250, 237, 56) 99.5%);
+}
+
+.adress__contenedor {
+    border-radius: 10px;
+	width: 100%;
+	max-width: 70vw;
+	background: #fff;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	padding: 20px;
+	margin: 0 auto;
+}

@@ -531,3 +531,18 @@ padding-bottom: 1rem;
 .carrito__btn-comprar:hover {
 	background: #199a28;
 }
+.carrito__btn-regresar {
+	padding: .5rem;
+	cursor:pointer;
+	color: #fdd3ea;
+	background-color: #3d132a;
+	border: 2px solid transparent; /* Agregar borde inferior transparente */
+	transition: 0.2s ease all;
+
+}
+.carrito__btn-regresar:hover {
+background-color: #fffff9;
+border-radius: .2rem;
+border-color: #3d132a;
+color :#040c05;
+}

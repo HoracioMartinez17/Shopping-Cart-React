@@ -15,7 +15,8 @@ import Badge, { BadgeProps } from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { yellow, blueGrey } from "@mui/material/colors";
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
+import { AuthContext } from "../../../context/AuthContext";
 
 const color = yellow[50];
 const backgroundColor = blueGrey["900"];
@@ -37,204 +38,216 @@ const pages = [
 	{ label: "Nike", to: "/products/nike" },
 	{ label: "Adidas", to: "/products/adidas" },
 	{ label: "Blog", to: "/blog" },
-  ];
-  const settings = ["Profile", "Account", "Dashboard", "Logout"];
+];
+const settings = ["Profile", "Account", "Dashboard", "Logout"];
+
+export const Navbar = () => {
+	const navigate = useNavigate();
+
+	const { logout} = React.useContext(AuthContext)
+	
   
-  export const Navbar = () => {
+	const handleLogout = () => {
+	  logout()
+	  navigate("/login", {
+		replace: true,
+	  });
+  
+	};
 	const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-	  null
+		null
 	);
 	const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-	  null
+		null
 	);
-  
+
 	const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-	  setAnchorElNav(event.currentTarget);
+		setAnchorElNav(event.currentTarget);
 	};
 	const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-	  setAnchorElUser(event.currentTarget);
+		setAnchorElUser(event.currentTarget);
 	};
-  
+
 	const handleCloseNavMenu = () => {
-	  setAnchorElNav(null);
+		setAnchorElNav(null);
 	};
-  
+
 	const handleCloseUserMenu = () => {
-	  setAnchorElUser(null);
+		setAnchorElUser(null);
 	};
-  
+
 	return (
-	  <AppBar position="static" sx={{ backgroundColor }}>
-		<Container className="navbar-header-menu" maxWidth="xl">
-		  <Toolbar disableGutters>
-			<AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-			<Typography
-			  variant="h6"
-			  noWrap
-			  component={Link}
-			  to="/"
-			  sx={{
-				mr: 2,
-				display: { xs: "none", md: "flex" },
-				fontFamily: "monospace",
-				fontWeight: 700,
-				letterSpacing: ".3rem",
-				color: "inherit",
-				textDecoration: "none",
-			  }}
-			>
-			  LOGO
-			</Typography>
-  
-			<Box
-			  sx={{
-				flexGrow: 1,
-				display: { xs: "flex", md: "none" },
-				marginRight: "5px",
-			  }}
-			>
-			  <IconButton
-				size="large"
-				aria-label="account of current user"
-				aria-controls="menu-appbar"
-				aria-haspopup="true"
-				onClick={handleOpenNavMenu}
-				color="inherit"
-			  >
-				<MenuIcon />
-			  </IconButton>
-			  <Menu
-				id="menu-appbar"
-				anchorEl={anchorElNav}
-				anchorOrigin={{
-				  vertical: "bottom",
-				  horizontal: "left",
-				}}
-				keepMounted
-				transformOrigin={{
-				  vertical: "top",
-				  horizontal: "left",
-				}}
-				open={Boolean(anchorElNav)}
-				onClose={handleCloseNavMenu}
-				sx={{
-				  display: { xs: "block", md: "none" },
-				}}
-			  >
-				{pages.map((page) => (
-				  <MenuItem key={page.label} onClick={handleCloseNavMenu}>
-					<Link
-					  to={page.to}
-					  style={{
-						textDecoration: "none",
-						color: "inherit",
-					  }}
-					>
-					  {page.label}
-					</Link>
-				  </MenuItem>
-				))}
-				<MenuItem>
-						<Link to = "/cart">
-				  <IconButton aria-label="cart">
-					<StyledBadge badgeContent={4} color="secondary">
-					  <ShoppingCartIcon />
-					</StyledBadge>
-				  </IconButton>
-					  </Link>
-				</MenuItem>
-			  </Menu>
-			</Box>
-  
-			<AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-			<Typography
-			  variant="h5"
-			  noWrap
-			  component={Link}
-			  to=""
-			  sx={{
-				mr: 2,
-				display: { xs: "flex", md: "none" },
-				flexGrow: 1,
-				fontFamily: "monospace",
-				fontWeight: 700,
-				letterSpacing: ".3rem",
-				color: "inherit",
-				textDecoration: "none",
-			  }}
-			>
-			  LOGO
-			</Typography>
-			<Box
-  component="ul"
-  sx={{
-    flexGrow: 1,
-    display: { xs: "none", md: "flex" },
-    listStyle: "none",
-    mr: 1,
-  }}
->
-  {pages.map((page) => (
-    <StyledListItem
-      key={page.label}
-      onClick={handleCloseNavMenu}
-      sx={{ my: 2 }}
-    >
-      <Typography
-        variant="body1"
-        component={Link}
-        to={page.to.toLowerCase()}
-        sx={{ textDecoration: "none", color: "white", px: 2 }}
-      >
-        {page.label}
-      </Typography>
-    </StyledListItem>
-  ))}
-</Box>
-			<Box sx={{ flexGrow: 0 }}>
-			<Link to = "/cart">
-			  <IconButton aria-label="cart" sx={{ color }}>
-				<StyledBadge badgeContent={4} color="secondary">
-				  <ShoppingCartIcon />
-				</StyledBadge>
-			  </IconButton>
-			  </Link>
-			  <Tooltip title="Open settings">
-				<IconButton onClick={handleOpenUserMenu} sx={{ px: 3 }}>
-				  <Avatar
-					alt="Remy Sharp"
-					src="/static/images/avatar/2.jpg"
-				  />
-				</IconButton>
-			  </Tooltip>
-			  <Menu
-				sx={{ mt: "45px" }}
-				id="menu-appbar"
-				anchorEl={anchorElUser}
-				anchorOrigin={{
-				  vertical: "top",
-				  horizontal: "right",
-				}}
-				keepMounted
-				transformOrigin={{
-				  vertical: "top",
-				  horizontal: "right",
-				}}
-				open={Boolean(anchorElUser)}
-				onClose={handleCloseUserMenu}
-			  >
-				{settings.map((setting) => (
-				  <MenuItem
-					key={setting}
-					onClick={handleCloseUserMenu}
-				  >
-					<Typography textAlign="center">{setting}</Typography>
-				  </MenuItem>
-				))}
-			  </Menu>
-			</Box>
-		  </Toolbar>
-		</Container>
-	  </AppBar>
+		<>
+			<AppBar position="static" sx={{ backgroundColor }}>
+				<Container className="navbar-header-menu" maxWidth="xl">
+					<Toolbar disableGutters>
+						<AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+						<Typography
+							variant="h6"
+							noWrap
+							component={Link}
+							to="/"
+							sx={{
+								mr: 2,
+								display: { xs: "none", md: "flex" },
+								fontFamily: "monospace",
+								fontWeight: 700,
+								letterSpacing: ".3rem",
+								color: "inherit",
+								textDecoration: "none",
+							}}
+						>
+							LOGO
+						</Typography>
+
+						<Box
+							sx={{
+								flexGrow: 1,
+								display: { xs: "flex", md: "none" },
+								marginRight: "5px",
+							}}
+						>
+							<IconButton
+								size="large"
+								aria-label="account of current user"
+								aria-controls="menu-appbar"
+								aria-haspopup="true"
+								onClick={handleOpenNavMenu}
+								color="inherit"
+							>
+								<MenuIcon />
+							</IconButton>
+							<Menu
+								id="menu-appbar"
+								anchorEl={anchorElNav}
+								anchorOrigin={{
+									vertical: "bottom",
+									horizontal: "left",
+								}}
+								keepMounted
+								transformOrigin={{
+									vertical: "top",
+									horizontal: "left",
+								}}
+								open={Boolean(anchorElNav)}
+								onClose={handleCloseNavMenu}
+								sx={{
+									display: { xs: "block", md: "none" },
+								}}
+							>
+								{pages.map((page) => (
+									<MenuItem key={page.label} onClick={handleCloseNavMenu}>
+										<Link
+											to={page.to}
+											style={{
+												textDecoration: "none",
+												color: "inherit",
+											}}
+										>
+											{page.label}
+										</Link>
+									</MenuItem>
+								))}
+								<MenuItem>
+									<Link to="/cart">
+										<IconButton aria-label="cart">
+											<StyledBadge badgeContent={4} color="secondary">
+												<ShoppingCartIcon />
+											</StyledBadge>
+										</IconButton>
+									</Link>
+								</MenuItem>
+							</Menu>
+						</Box>
+
+						<AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+						<Typography
+							variant="h5"
+							noWrap
+							component={Link}
+							to=""
+							sx={{
+								mr: 2,
+								display: { xs: "flex", md: "none" },
+								flexGrow: 1,
+								fontFamily: "monospace",
+								fontWeight: 700,
+								letterSpacing: ".3rem",
+								color: "inherit",
+								textDecoration: "none",
+							}}
+						>
+							LOGO
+						</Typography>
+						<Box
+							component="ul"
+							sx={{
+								flexGrow: 1,
+								display: { xs: "none", md: "flex" },
+								listStyle: "none",
+								mr: 1,
+							}}
+						>
+							{pages.map((page) => (
+								<StyledListItem
+									key={page.label}
+									onClick={handleCloseNavMenu}
+									sx={{ my: 2 }}
+								>
+									<Typography
+										variant="body1"
+										component={Link}
+										to={page.to.toLowerCase()}
+										sx={{ textDecoration: "none", color: "white", px: 2 }}
+									>
+										{page.label}
+									</Typography>
+								</StyledListItem>
+							))}
+						</Box>
+						<Box sx={{ flexGrow: 0 }}>
+							<Link to="/cart">
+								<IconButton aria-label="cart" sx={{ color }}>
+									<StyledBadge badgeContent={4} color="secondary">
+										<ShoppingCartIcon />
+									</StyledBadge>
+								</IconButton>
+							</Link>
+							<Tooltip title="Open settings">
+								<IconButton onClick={handleOpenUserMenu} sx={{ px: 3 }}>
+									<Avatar
+										alt="Remy Sharp"
+										src="/static/images/avatar/2.jpg"
+									/>
+								</IconButton>
+							</Tooltip>
+							<Menu
+								sx={{ mt: "45px" }}
+								id="menu-appbar"
+								anchorEl={anchorElUser}
+								anchorOrigin={{
+									vertical: "top",
+									horizontal: "right",
+								}}
+								keepMounted
+								transformOrigin={{
+									vertical: "top",
+									horizontal: "right",
+								}}
+								open={Boolean(anchorElUser)}
+								onClose={handleCloseUserMenu}
+							>
+								{settings.map((setting) => (
+									<MenuItem key={setting} onClick={setting === "Logout" ? handleLogout : handleCloseUserMenu}>
+									<Typography textAlign="center">{setting}</Typography>
+									</MenuItem>
+								))}
+							</Menu>
+						</Box>
+					</Toolbar>
+				</Container>
+			</AppBar>
+
+		</>
 	);
-  };
+};

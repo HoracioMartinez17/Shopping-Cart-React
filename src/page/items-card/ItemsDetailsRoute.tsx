@@ -4,7 +4,7 @@ import { ItemsDetailsContainer } from "./ItemsDetailsContainer";
 
 export const ItemsDetailsRoute = () => {
 	const { id } = useParams();
-	const itemid = id ?? ""
+	const itemid = id || ""
   
 	return <ItemsDetailsContainer id={itemid} />;
   };

@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react';
 
-interface ItemCountProps {
+ interface ItemCountProps {
   quantity: number;
   handleSum: () => void;
   handleRest: () => void;
