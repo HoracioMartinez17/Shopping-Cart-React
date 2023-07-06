@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { ProductProps } from "../../types/types";
 import { Item } from "./Item";
-import "./itemCartStyles.css";
 
 interface ItemListProps {
 	products: ProductProps[];

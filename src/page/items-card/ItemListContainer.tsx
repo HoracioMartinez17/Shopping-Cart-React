@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Brand, ProductProps } from "../../types/types";
-
 import { ItemList } from "./Itemlist";
 import { capitalizeTitle, fetchProducts, getProductsByBrand } from "../..";
 

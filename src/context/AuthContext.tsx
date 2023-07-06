@@ -1,14 +1,8 @@
 import { createContext } from "react";
 
-interface User {
-  id: number;
-  name: string;
-}
-
-
 interface AuthContextType {
   isLogged: boolean;
-  user: User | null;
+  user: string | null;
   login: (name: string) => void;
   logout: () => void;
 }

@@ -18,7 +18,7 @@ const AuthProvider = ({ children }:{children: ReactNode}) => {
 
     const [authState, dispatch] = useReducer(authReducer, {}, init)
 
-    console.log(authState)
+
 
     const login = (name = '') => {
         const user = {
@@ -38,7 +38,9 @@ const AuthProvider = ({ children }:{children: ReactNode}) => {
 
     }
 
-    return <AuthContext.Provider value={{ ...authState, login: login, logout: logout }}> {children} </AuthContext.Provider>
+    return <AuthContext.Provider value={{ ...authState, login: login, logout: logout }}>
+       <> {children}</>
+        </AuthContext.Provider>
 
 }
 

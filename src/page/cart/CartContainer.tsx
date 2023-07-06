@@ -8,7 +8,7 @@ export const CartContainer = () => {
 
 	return (
 		<>
-			<div className="carrito" id="carrito">
+			<div className="carrito">
 				<div className="carrito__contenedor">
 					<div className="carrito__header">
 						<h4 className="carrito__titulo">Carrito</h4>
@@ -70,7 +70,6 @@ export const CartContainer = () => {
 													<button
 														type="button"
 														className="carrito__btn-eliminar-item"
-														data-accion="eliminar-item-carrito"
 														onClick={() =>
 															removeProduct(
 																itemIndex
@@ -121,14 +120,14 @@ export const CartContainer = () => {
 								<button
 									type="button"
 									className="carrito__btn-comprar"
-									id="carrito__btn-comprar">
+									>
 									Comprar
 								</button>
 							</Link>
 						</div>
 						<div
 							className="carrito__contenedor-btn-regresar"
-							data-accion="cerrar-carrito">
+							>
 							<Link to="/">
 								{" "}
 								<button

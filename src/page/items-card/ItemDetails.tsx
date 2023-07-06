@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./itemCartStyles.css";
 import { ProductData, Brand } from "../../types/types";
-import { ItemCount } from "./ItemCount";
+import { ItemCount } from "./ItemButtonCount";
 import { CartContext } from "../../context/CartContext";
 
 export interface ItemDetailsProps {
@@ -50,7 +50,7 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({ item }) => {
 					<div className="producto__contenedor-imagen">
 						<img
 							src={products[0].products[0].srcImg[0]}
-							alt=""
+							alt={products[0].products[0].title[0]}
 							className="producto__imagen"
 						/>
 					</div>
@@ -85,6 +85,7 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({ item }) => {
 										className="producto__radio-input"
 										name="color"
 										id="negro"
+										defaultChecked
 									/>
 									<p className="producto__radio-texto producto__radio-texto--color producto__radio-texto--negro">
 										Negro
@@ -97,6 +98,7 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({ item }) => {
 										name="color"
 										id="rojo"
 										value="rojo"
+										defaultChecked
 									/>
 									<p className="producto__radio-texto producto__radio-texto--color producto__radio-texto--rojo">
 										Rojo
@@ -109,6 +111,7 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({ item }) => {
 										name="color"
 										id="amarillo"
 										value="amarillo"
+										defaultChecked
 									/>
 									<p className="producto__radio-texto producto__radio-texto--color producto__radio-texto--amarillo">
 										Amarillo
@@ -139,6 +142,7 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({ item }) => {
 										name="tamaño"
 										id="2"
 										value="2"
+										defaultChecked
 									/>
 									<p className="producto__radio-texto">2</p>
 								</label>
@@ -149,6 +153,7 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({ item }) => {
 										name="tamaño"
 										id="2,5"
 										value="2,5"
+										defaultChecked
 									/>
 									<p className="producto__radio-texto">2,5</p>
 								</label>
@@ -159,6 +164,7 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({ item }) => {
 										name="tamaño"
 										id="3"
 										value="3"
+										defaultChecked
 									/>
 									<p className="producto__radio-texto">3</p>
 								</label>
@@ -169,6 +175,7 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({ item }) => {
 										name="tamaño"
 										id="3,5"
 										value="3,5"
+										defaultChecked
 									/>
 									<p className="producto__radio-texto">3,5</p>
 								</label>
@@ -179,6 +186,7 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({ item }) => {
 										name="tamaño"
 										id="4"
 										value="4"
+										defaultChecked
 									/>
 									<p className="producto__radio-texto">4</p>
 								</label>
@@ -234,43 +242,9 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({ item }) => {
 					<div className="tab" id="reseñas">
 						<h3 className="tab__titulo">Reseñas</h3>
 						<div className="reseña">
-							{/* <img src="./img/users/1.jpg" className ="reseña__foto" alt="" /> */}
 							<div className="reseña__info">
 								<div className="reseña__estrellas">
 									<div className="reseña__estrella">
-										{/* <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                />
-              </svg> */}
-									</div>
-									<div className="reseña__estrella">
-										{/* <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                />
-              </svg> */}
-									</div>
-									<div className="reseña__estrella">
-										{/* <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                />
-              </svg> */}
-									</div>
-									<div className="reseña__estrella">
-										{/* <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                />
-              </svg> */}
-									</div>
-									<div className="reseña__estrella">
-										{/* <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                />
-              </svg> */}
 									</div>
 								</div>
 								<p className="reseña__fecha">
@@ -289,44 +263,7 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({ item }) => {
 							</div>
 						</div>
 						<div className="reseña">
-							{/* <img src="./img/users/2.jpg" alt="" className ="reseña__foto" /> */}
 							<div className="reseña__info">
-								<div className="reseña__estrellas">
-									<div className="reseña__estrella">
-										{/* <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                />
-              </svg> */}
-									</div>
-									<div className="reseña__estrella">
-										{/* <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                />
-              </svg> */}
-									</div>
-									<div className="reseña__estrella">
-										{/* <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                />
-              </svg> */}
-									</div>
-									<div className="reseña__estrella">
-										{/* <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                />
-              </svg> */}
-									</div>
-									<div className="reseña__estrella">
-										{/* <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                />
-              </svg> */}
-									</div>
 								</div>
 								<p className="reseña__fecha">
 									31 de Mayo de 2022
@@ -338,55 +275,19 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({ item }) => {
 							</div>
 						</div>
 						<div className="reseña">
-							{/* <img src="./img/users/3.jpg" alt="" className ="reseña__foto" /> */}
 							<div className="reseña__info">
 								<div className="reseña__estrellas">
 									<div className="reseña__estrella">
-										{/* <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                />
-              </svg> */}
 									</div>
 									<div className="reseña__estrella">
-										{/* <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                />
-              </svg> */}
 									</div>
 									<div className="reseña__estrella">
-										{/* <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                />
-              </svg> */}
 									</div>
 									<div className="reseña__estrella">
-										{/* <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                />
-              </svg> */}
 									</div>
 									<div className="reseña__estrella">
-										{/* <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                />
-              </svg> */}
 									</div>
 								</div>
-								<p className="reseña__fecha">
-									31 de Mayo de 2022
-								</p>
-								<p className="reseña__texto">
-									Integer vel nisi massa. Pellentesque ligula
-									nulla, pretium hendrerit massa quis, tempus
-									consequat lectus. Nulla facilisi. Etiam
-									ipsum felis, euismod eget volutpat
-									tristique, consequat at lorem.
-								</p>
 							</div>
 						</div>
 					</div>
@@ -410,7 +311,6 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({ item }) => {
 						</p>
 					</div>
 				</div>
-			</div>
 		</>
 	);
 };

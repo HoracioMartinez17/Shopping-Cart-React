@@ -13,7 +13,7 @@ export const HomeRoute = () => {
 					<Route path="/products/:brand"element={<ItemListContainer />}/>
 					<Route path="/cart" element={<CartContainer />} />
 					<Route path="/checkout" element={<Checkout />} />
-                    <Route path="/" element={<Navigate to="/home" />} />
+                    <Route path="/" element={<Navigate to="/" />} />
 				</Routes>
 			</Layout>
 	);
